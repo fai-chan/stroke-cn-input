@@ -1,4 +1,4 @@
-# <img src="public/favicon.svg" alt="" width="28" height="28"> 線上筆劃中文輸入
+# <img src="public/icon.png" alt="" width="32" height="32"> 線上筆劃中文輸入
 
 [English](README.en.md) · **[立即使用](https://stroke-cn-input.grok.me/)**
 

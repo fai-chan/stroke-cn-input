@@ -1,4 +1,4 @@
-# <img src="public/favicon.svg" alt="" width="28" height="28"> Stroke Chinese Input
+# <img src="public/icon.png" alt="" width="32" height="32"> Stroke Chinese Input
 
 [中文](README.md) · **[Open the app](https://stroke-cn-input.grok.me/)**
 
