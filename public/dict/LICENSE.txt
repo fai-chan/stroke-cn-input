@@ -1,0 +1,28 @@
+Dictionary files in this directory are from Conway Stroke Data
+by Conway (https://github.com/stroke-input/stroke-input-data), 2021–2026,
+except the association tables noted below.
+
+strokes.txt:
+Copyright 2021–2026 Conway.
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
+
+rank-t.txt, rank-s.txt, phrases-t.txt, phrases-s.txt, only-t.txt, only-s.txt:
+Character-frequency ranks, phrase lists, and traditional/simplified character
+lists from the same project.
+Released into the public domain (CC0 1.0).
+https://creativecommons.org/publicdomain/zero/1.0/
+
+assoc-t.txt, assoc-s.txt:
+Derived next-character tables. They are not the upstream dictionaries.
+Written-language frequencies come from the 萬象基礎詞庫
+(https://github.com/amzxyz/rime-wanxiang-data), CC BY 4.0.
+Only the dictionary data is used; that project's program code is not included.
+Cantonese frequencies come from words.hk fine data, 「語料庫×詞表使用頻率」
+(https://words.hk/faiman/analysis/existingwordcount/), public domain.
+Credits to words.hk. Frequencies only; definitions and example sentences
+are not included.
+
+When both sources list a word, the higher count is kept. A word that is in
+the phrase list but in neither frequency list is kept and ranked after words
+that have a count. Each following character keeps only its strongest word.

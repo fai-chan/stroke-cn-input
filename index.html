@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+    <title>線上筆劃中文輸入</title>
+    <meta name="description" content="以英文鍵盤對應筆劃輸入中文。選字後，代表筆劃的英文字母會換成漢字。" />
+    <meta name="theme-color" content="#f3eee4" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700&display=swap" />
+    <script>
+      (function () {
+        try {
+          var raw = localStorage.getItem("stroke-cn.v1");
+          var prefs = raw ? JSON.parse(raw) : null;
+          var theme = prefs && prefs.theme === "dark" ? "dark" : "light";
+          var entry = prefs && (prefs.entry === "button" || prefs.entry === "keyboard")
+            ? prefs.entry
+            : matchMedia("(pointer: coarse)").matches ? "button" : "keyboard";
+          var root = document.documentElement;
+          root.dataset.theme = theme;
+          root.dataset.entry = entry;
+          root.dataset.boot = "1";
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", theme === "dark" ? "#141210" : "#f3eee4");
+          window.__STROKE_PREFS = prefs;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f3eee4;
+  --color-sheet: #fffdf8;
+  --color-ink: #1c1916;
+  --color-muted: #6f675e;
+  --color-line: #e3d7c6;
+  --color-cinnabar: #b4332a;
+  --color-cinnabar-soft: #f8e7e3;
+  --font-sans: "Noto Sans TC", "PingFang TC", "Noto Sans CJK TC", ui-sans-serif, sans-serif;
+  --font-serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --radius-card: 0.75rem;
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-cinnabar) 28%, transparent);
+  }
+}
+
+.ime-app {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+html[data-boot][data-entry="keyboard"] .ime-pad {
+  display: none;
+}
+
+.ime-stage {
+  padding-bottom: var(--kb, 0px);
+}
+
+.ime-dock {
+  position: relative;
+  z-index: 20;
+  background: var(--color-sheet);
+  transform: translate3d(0, calc(-1 * var(--kb, 0px)), 0);
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+html[data-kb="1"] .ime-dock {
+  padding-bottom: 0;
+}
+
+.ime-dock::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 80vh;
+  background: var(--color-sheet);
+  pointer-events: none;
+}
+
+html[data-kb="1"] .keys-figure {
+  display: none;
+}
+
+html[data-theme="dark"] {
+  --color-paper: #141210;
+  --color-sheet: #221e1a;
+  --color-ink: #f4efe6;
+  --color-muted: #b7ab9e;
+  --color-line: #3c342c;
+  --color-cinnabar: #e36a5c;
+  --color-cinnabar-soft: #3d2420;
+  color-scheme: dark;
+}
+
+.stroke-row {
+  scrollbar-width: thin;
+  white-space: nowrap;
+}
+
+.ime-mark {
+  background: var(--color-cinnabar-soft);
+  color: var(--color-cinnabar);
+  border-radius: 0.15rem;
+}
+
+.ime-field {
+  color: transparent;
+  caret-color: var(--color-ink);
+}
+
+.ime-field::placeholder {
+  color: var(--color-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ime-app * {
+    transition: none !important;
+  }
+}
