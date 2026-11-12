@@ -26,7 +26,7 @@ Stroke order comes from [Conway Stroke Data](https://github.com/stroke-input/str
 
 ## How stroke input behaves
 
-- The code is the stroke order, so you need to know how the character is written.
+- The code is the stroke order, you only need to know how the character is written.
 - Input is one character at a time. After a choice, the page lists a next character. There is no whole-sentence conversion.
 - Many characters share the first few strokes, so the candidates stay in view while you type.
 
