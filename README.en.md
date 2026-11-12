@@ -20,22 +20,22 @@ Stroke order comes from [Conway Stroke Data](https://github.com/stroke-input/str
 
 - You recognize the character, but the reading is uncertain, or you would rather not start from the reading.
 - You are on someone else's computer, a shared machine, or a machine without your usual input method.
-- You can write the character and have not learned a shape-based code.
+- You can write the character. That is enough. There is no shape-based code to learn.
 - You only need a few characters, then a copy.
 - You want traditional, simplified, or colloquial Cantonese characters, and you want to choose what is shown.
 
 ## How stroke input behaves
 
 - The code is the stroke order, you only need to know how the character is written.
-- Input is one character at a time. After a choice, the page lists a next character. There is no whole-sentence conversion.
-- Many characters share the first few strokes, so the candidates stay in view while you type.
+- Type one character at a time. After you pick one, the next character is listed and can be added directly.
+- Characters that share the opening strokes appear together, and the list narrows as you continue.
 
 ## Features
 
 - **Five stroke classes, and one wildcard.** `L` matches any stroke in that place.
 - **Keyboard or buttons.** Type the letters, or tap the strokes on screen.
 - **The key order can change.** The default is `UIOJKL`. It can be `JKLUIO`.
-- **Picks start at `9`.** The first candidate is `9`, then `8` down to `1`. `9` sits next to the stroke keys, so the usual choice does not reach across to `1`. Punctuation and the next-character row use the same order.
+- **Picks start at `9`.** The first candidate is `9`, then `8` down to `1`. `9` sits next to the stroke keys, so the usual choice stays under your hand. Punctuation and the next-character row use the same order.
 - **One hand can do the typing.** The stroke keys and `9` are on the right hand. Button mode can be used with one hand as well.
 - **The script can change.** Traditional, simplified, or both. Characters already in the draft stay as typed.
 - **Preference can change.** A set of colloquial Cantonese characters can move forward or back. Characters outside the frequency lists can be hidden.
@@ -78,7 +78,7 @@ Button mode taps the strokes and changes page with a sideways swipe. On a touch 
 ### A few notes
 
 - **Unsure of one stroke: use `L`.** If the fourth stroke of 木 is forgotten, type `U I O L`.
-- **If nothing appears, type the first two or three strokes.** The list narrows with each stroke.
+- **The first two or three strokes are enough to start.** The list narrows with each stroke.
 - **After a choice, look at the next-character row.** The following character can be picked directly.
 
 ## Settings
@@ -100,7 +100,7 @@ For offline use, run `npm run build` and put `dist/` on the machine or on any st
 
 ## Limits
 
-- **The stroke order has to match the dictionary.** `L` covers one uncertain stroke.
+- **A matching stroke order finds the character.** If one stroke differs from the dictionary, change that stroke, or skip it with `L`.
 - **Input is one character at a time.** A long passage takes more keystrokes.
 - **The candidate list can be long.** Characters that share the first strokes need another page.
 - **Typing happens on this page.** Copy the result into the program where you need it.
