@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { ChevronRight, Github } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import type { LayoutId, ScriptMode } from "../ime/coding";
 import type { RankBias } from "../ime/engine";
 import type { EntryMode, ThemeMode } from "../ime/prefs";
@@ -57,18 +57,7 @@ export function SettingsSheet({
       >
         <div className="min-h-0 overflow-auto p-4">
           <div className="mb-4 flex items-center justify-between gap-3">
-            <div className="flex items-center gap-1">
-              <a
-                href="https://github.com/fai-chan/stroke-cn-input"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub"
-                className="inline-flex size-11 items-center justify-center rounded-full text-ink"
-              >
-                <Github className="size-5" />
-              </a>
-              <h2 className="font-serif text-lg font-bold">設定</h2>
-            </div>
+            <h2 className="font-serif text-lg font-bold">設定</h2>
             <button type="button" onClick={onClose} className="text-sm text-muted">
               關閉
             </button>

@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type FormEvent, type KeyboardEvent, type MouseEvent } from "react";
-import { Check, Copy, Settings } from "lucide-react";
+import { Check, Copy, Github, Settings } from "lucide-react";
 import {
   compositionBounds,
   digitsToLetters,
@@ -595,6 +595,15 @@ export function StrokeApp() {
           </span>
         </div>
         <h1 className="min-w-0 flex-1 font-serif text-lg leading-tight font-bold sm:text-xl">線上筆劃中文輸入</h1>
+        <a
+          href="https://github.com/fai-chan/stroke-cn-input"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub"
+          className="inline-flex size-11 items-center justify-center rounded-full bg-sheet text-ink border border-line"
+        >
+          <Github className="size-5" />
+        </a>
         <button
           type="button"
           aria-expanded={settingsOpen}
